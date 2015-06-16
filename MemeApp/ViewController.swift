@@ -16,6 +16,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var imagePicker = UIImagePickerController()
     var newMedia: Bool?
 
+    @IBOutlet weak var flecheimg: UIImageView!
     @IBOutlet weak var TextInstruction: UILabel!
     @IBOutlet weak var top_text: UITextField!
     @IBOutlet weak var bottom_text: UITextField!
@@ -61,7 +62,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
                 self.presentViewController(imagePicker, animated: true, completion: nil)
                 newMedia = true
-                TextInstruction.hidden=true
+                HideHelp()
+            
         }
     }
     
@@ -80,9 +82,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     completion: nil)
                 newMedia = false
                 imageView.hidden=false
-                TextInstruction.hidden=true
+                HideHelp()
+                
                 
         }
+    }
+    
+    func HideHelp (){
+        TextInstruction.hidden=true
+        flecheimg.hidden=true
+        top_text.hidden=false
+        bottom_text.hidden=false
+        imageView.hidden=false
+    }
+    
+    func showHelp(){
+        TextInstruction.hidden=false
+        flecheimg.hidden=false
+        top_text.hidden=true
+        bottom_text.hidden=true
+        imageView.hidden=true
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
@@ -127,6 +146,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             alert.addAction(cancelAction)
             self.presentViewController(alert, animated: true,
                 completion: nil)
+            
+            showHelp()
         }
     }
 
@@ -144,15 +165,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        imageView.hidden=true
-        TextInstruction.hidden=false
+        showHelp()
+        
         
         // text attibutes, negative stroke to be able to fill letters
         let memeTextAttributes =
         [
             NSForegroundColorAttributeName : UIColor.yellowColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : -3.0,
+            NSStrokeWidthAttributeName : -2.0,
             NSStrokeColorAttributeName : UIColor.blueColor()
             // ajouter alignement text
             

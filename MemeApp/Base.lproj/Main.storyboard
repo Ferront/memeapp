@@ -46,7 +46,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" allowsEditingTextAttributes="YES" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nH3-Iv-FhX" userLabel="Textfield top">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" allowsEditingTextAttributes="YES" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nH3-Iv-FhX" userLabel="Textfield top">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="c4j-w3-wNz"/>
@@ -68,7 +68,7 @@
                                     <action selector="EditMyText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y4J-KJ-cyj"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" allowsEditingTextAttributes="YES" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-GB-Xne" userLabel="Textfield bottom">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" allowsEditingTextAttributes="YES" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-GB-Xne" userLabel="Textfield bottom">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done"/>
@@ -97,43 +97,63 @@
                                 <items>
                                     <barButtonItem title="Share" width="87" id="XtN-Xy-csL"/>
                                 </items>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="43"/>
-                                </variation>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMP-8X-uPo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMP-8X-uPo">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="78" y="389" width="244" height="21"/>
-                                </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleche" translatesAutoresizingMaskIntoConstraints="NO" id="uZM-eO-U4b">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="04Y-0Y-rzH"/>
+                                    <constraint firstAttribute="height" constant="148" id="DxD-TQ-RoN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="04Y-0Y-rzH"/>
+                                        <exclude reference="DxD-TQ-RoN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="04Y-0Y-rzH"/>
+                                        <include reference="DxD-TQ-RoN"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nH3-Iv-FhX" firstAttribute="leading" secondItem="cvg-GB-Xne" secondAttribute="leading" id="31d-aJ-Cxc"/>
                             <constraint firstItem="nH3-Iv-FhX" firstAttribute="leading" secondItem="x8Q-Yb-2rZ" secondAttribute="leading" id="4Wu-u9-Ilu"/>
                             <constraint firstItem="nH3-Iv-FhX" firstAttribute="trailing" secondItem="x8Q-Yb-2rZ" secondAttribute="trailing" id="4gR-Z7-giY"/>
+                            <constraint firstItem="LMP-8X-uPo" firstAttribute="leading" secondItem="uZM-eO-U4b" secondAttribute="trailing" constant="8" id="Ev3-ef-UcI"/>
                             <constraint firstItem="Shd-dZ-GCx" firstAttribute="trailing" secondItem="x8Q-Yb-2rZ" secondAttribute="trailing" id="Fwj-Jc-FzF"/>
                             <constraint firstItem="nH3-Iv-FhX" firstAttribute="top" secondItem="x8Q-Yb-2rZ" secondAttribute="bottom" constant="23" id="Isf-xG-Njk"/>
-                            <constraint firstItem="LMP-8X-uPo" firstAttribute="centerX" secondItem="rgo-FP-iRC" secondAttribute="centerX" id="Jdw-u8-boF"/>
+                            <constraint firstItem="LMP-8X-uPo" firstAttribute="centerX" secondItem="rgo-FP-iRC" secondAttribute="centerX" id="Jdw-u8-boF">
+                                <variation key="heightClass=regular-widthClass=compact" constant="93"/>
+                            </constraint>
                             <constraint firstItem="x8Q-Yb-2rZ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Mq9-FA-xsC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rgo-FP-iRC" secondAttribute="trailing" constant="-23" id="NGs-IG-H4N">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="Shd-dZ-GCx" secondAttribute="trailing" id="R1O-44-rNN"/>
                             <constraint firstItem="Shd-dZ-GCx" firstAttribute="top" secondItem="cvg-GB-Xne" secondAttribute="bottom" constant="19" id="S2r-hX-1NG"/>
-                            <constraint firstItem="LMP-8X-uPo" firstAttribute="centerY" secondItem="rgo-FP-iRC" secondAttribute="centerY" constant="11.5" id="SK5-Wf-IgO"/>
                             <constraint firstItem="Shd-dZ-GCx" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="V1I-uJ-295"/>
+                            <constraint firstItem="uZM-eO-U4b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="W2S-Wb-A1F"/>
                             <constraint firstItem="rgo-FP-iRC" firstAttribute="leading" secondItem="Shd-dZ-GCx" secondAttribute="leading" id="aTZ-92-hzn"/>
+                            <constraint firstItem="Shd-dZ-GCx" firstAttribute="leading" secondItem="uZM-eO-U4b" secondAttribute="trailing" constant="-163" id="aW0-3N-qLO"/>
+                            <constraint firstItem="uZM-eO-U4b" firstAttribute="centerY" secondItem="LMP-8X-uPo" secondAttribute="centerY" constant="46" id="bre-51-4AZ"/>
                             <constraint firstItem="nH3-Iv-FhX" firstAttribute="trailing" secondItem="cvg-GB-Xne" secondAttribute="trailing" id="dcx-TD-lfx"/>
                             <constraint firstItem="rgo-FP-iRC" firstAttribute="leading" secondItem="x8Q-Yb-2rZ" secondAttribute="leading" id="hQS-8T-bfw"/>
                             <constraint firstAttribute="centerY" secondItem="rgo-FP-iRC" secondAttribute="centerY" constant="27" id="isr-eG-pyP">
                                 <variation key="heightClass=regular-widthClass=compact" constant="12"/>
                             </constraint>
                             <constraint firstItem="Shd-dZ-GCx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="v4h-EN-xMF"/>
+                            <constraint firstItem="uZM-eO-U4b" firstAttribute="top" secondItem="LMP-8X-uPo" secondAttribute="top" constant="-16" id="vdv-EC-9n7"/>
+                            <constraint firstItem="uZM-eO-U4b" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="xgi-kc-z9y"/>
                             <constraint firstAttribute="centerX" secondItem="rgo-FP-iRC" secondAttribute="centerX" constant="14.5" id="znj-Xk-15y">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -146,6 +166,7 @@
                                 <exclude reference="Shd-dZ-GCx"/>
                                 <exclude reference="x8Q-Yb-2rZ"/>
                                 <exclude reference="LMP-8X-uPo"/>
+                                <exclude reference="uZM-eO-U4b"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Mq9-FA-xsC"/>
@@ -159,12 +180,17 @@
                                 <exclude reference="4gR-Z7-giY"/>
                                 <exclude reference="Isf-xG-Njk"/>
                                 <exclude reference="dcx-TD-lfx"/>
+                                <exclude reference="W2S-Wb-A1F"/>
+                                <exclude reference="bre-51-4AZ"/>
+                                <exclude reference="vdv-EC-9n7"/>
+                                <exclude reference="xgi-kc-z9y"/>
+                                <exclude reference="Ev3-ef-UcI"/>
                                 <exclude reference="Jdw-u8-boF"/>
-                                <exclude reference="SK5-Wf-IgO"/>
                                 <exclude reference="Fwj-Jc-FzF"/>
                                 <exclude reference="R1O-44-rNN"/>
                                 <exclude reference="S2r-hX-1NG"/>
                                 <exclude reference="V1I-uJ-295"/>
+                                <exclude reference="aW0-3N-qLO"/>
                                 <exclude reference="v4h-EN-xMF"/>
                             </mask>
                         </variation>
@@ -180,6 +206,7 @@
                                 <include reference="nH3-Iv-FhX"/>
                                 <include reference="cvg-GB-Xne"/>
                                 <include reference="LMP-8X-uPo"/>
+                                <include reference="uZM-eO-U4b"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Mq9-FA-xsC"/>
@@ -193,12 +220,17 @@
                                 <include reference="4gR-Z7-giY"/>
                                 <include reference="Isf-xG-Njk"/>
                                 <include reference="dcx-TD-lfx"/>
+                                <include reference="W2S-Wb-A1F"/>
+                                <include reference="bre-51-4AZ"/>
+                                <include reference="vdv-EC-9n7"/>
+                                <include reference="xgi-kc-z9y"/>
+                                <include reference="Ev3-ef-UcI"/>
                                 <include reference="Jdw-u8-boF"/>
-                                <include reference="SK5-Wf-IgO"/>
                                 <include reference="Fwj-Jc-FzF"/>
                                 <include reference="R1O-44-rNN"/>
                                 <include reference="S2r-hX-1NG"/>
                                 <include reference="V1I-uJ-295"/>
+                                <include reference="aW0-3N-qLO"/>
                                 <include reference="v4h-EN-xMF"/>
                             </mask>
                         </variation>
@@ -208,6 +240,7 @@
                     <connections>
                         <outlet property="TextInstruction" destination="LMP-8X-uPo" id="ZZC-BO-Uk6"/>
                         <outlet property="bottom_text" destination="cvg-GB-Xne" id="gFk-CG-9Jd"/>
+                        <outlet property="flecheimg" destination="uZM-eO-U4b" id="Scc-g7-OJW"/>
                         <outlet property="imageView" destination="rgo-FP-iRC" id="Ha7-sW-8wv"/>
                         <outlet property="top_text" destination="nH3-Iv-FhX" id="Lj7-Yc-tSp"/>
                     </connections>
@@ -217,4 +250,7 @@
             <point key="canvasLocation" x="294" y="438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fleche" width="180" height="240"/>
+    </resources>
 </document>
