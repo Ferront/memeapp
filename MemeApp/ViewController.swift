@@ -12,10 +12,11 @@ import MobileCoreServices
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var chooseBuuton: UIButton!
+
     var imagePicker = UIImagePickerController()
     var newMedia: Bool?
 
+    @IBOutlet weak var TextInstruction: UILabel!
     @IBOutlet weak var top_text: UITextField!
     @IBOutlet weak var bottom_text: UITextField!
     //var contentMode: UIViewContentMode
@@ -60,6 +61,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
                 self.presentViewController(imagePicker, animated: true, completion: nil)
                 newMedia = true
+                TextInstruction.hidden=true
         }
     }
     
@@ -78,6 +80,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     completion: nil)
                 newMedia = false
                 imageView.hidden=false
+                TextInstruction.hidden=true
                 
         }
     }
@@ -141,21 +144,29 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let memeTextAttributes = [
-            NSStrokeColorAttributeName : UIColor.blueColor(),
-            NSForegroundColorAttributeName : UIColor.blackColor(),
-            NSBackgroundColorAttributeName : UIColor.lightGrayColor(),
+        imageView.hidden=true
+        TextInstruction.hidden=false
+        
+        // text attibutes, negative stroke to be able to fill letters
+        let memeTextAttributes =
+        [
+            NSForegroundColorAttributeName : UIColor.yellowColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : 2
+            NSStrokeWidthAttributeName : -3.0,
+            NSStrokeColorAttributeName : UIColor.blueColor()
+            // ajouter alignement text
+            
         ]
         
-        top_text.defaultTextAttributes=memeTextAttributes
-        bottom_text.defaultTextAttributes=memeTextAttributes
+        
+        top_text.defaultTextAttributes = memeTextAttributes as [NSObject : AnyObject]
+        bottom_text.defaultTextAttributes = memeTextAttributes as [NSObject : AnyObject]
+
         
         top_text.text="Tap to add text here"
-        top_text.textAlignment=NSTextAlignment.Center;
+        top_text.textAlignment = NSTextAlignment.Center;
         bottom_text.text="Tap to add text here"
-        bottom_text.textAlignment=NSTextAlignment.Center;
+        bottom_text.textAlignment = NSTextAlignment.Center;
         
         top_text.delegate=self;
         bottom_text.delegate=self;

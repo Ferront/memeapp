@@ -46,13 +46,12 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nH3-Iv-FhX" userLabel="Textfield top">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" allowsEditingTextAttributes="YES" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nH3-Iv-FhX" userLabel="Textfield top">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="c4j-w3-wNz"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -60,6 +59,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                     <mask key="constraints">
                                         <include reference="c4j-w3-wNz"/>
                                     </mask>
@@ -68,11 +68,14 @@
                                     <action selector="EditMyText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y4J-KJ-cyj"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-GB-Xne" userLabel="Textfield bottom">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Tap to add text here" allowsEditingTextAttributes="YES" placeholder="Tap to add text here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-GB-Xne" userLabel="Textfield bottom">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                    <rect key="frame" x="0.0" y="707" width="400" height="30"/>
+                                </variation>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Shd-dZ-GCx" userLabel="Toolbar du bas">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -94,6 +97,9 @@
                                 <items>
                                     <barButtonItem title="Share" width="87" id="XtN-Xy-csL"/>
                                 </items>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="43"/>
+                                </variation>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMP-8X-uPo">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -200,6 +206,7 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="TextInstruction" destination="LMP-8X-uPo" id="ZZC-BO-Uk6"/>
                         <outlet property="bottom_text" destination="cvg-GB-Xne" id="gFk-CG-9Jd"/>
                         <outlet property="imageView" destination="rgo-FP-iRC" id="Ha7-sW-8wv"/>
                         <outlet property="top_text" destination="nH3-Iv-FhX" id="Lj7-Yc-tSp"/>
