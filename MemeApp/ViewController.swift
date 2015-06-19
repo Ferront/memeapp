@@ -227,7 +227,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        self.view.frame.origin.y = 0
     }
     
     
