@@ -244,9 +244,11 @@
                     <connections>
                         <outlet property="TextInstruction" destination="LMP-8X-uPo" id="ZZC-BO-Uk6"/>
                         <outlet property="bottom_text" destination="cvg-GB-Xne" id="gFk-CG-9Jd"/>
+                        <outlet property="bottombar" destination="Shd-dZ-GCx" id="Xfb-js-3qW"/>
                         <outlet property="flecheimg" destination="uZM-eO-U4b" id="Scc-g7-OJW"/>
                         <outlet property="imageView" destination="rgo-FP-iRC" id="Ha7-sW-8wv"/>
                         <outlet property="top_text" destination="nH3-Iv-FhX" id="Lj7-Yc-tSp"/>
+                        <outlet property="topbar" destination="Shd-dZ-GCx" id="rQS-e4-Vz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -22,6 +22,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var bottom_text: UITextField! // text entered by user
     @IBOutlet var imageView: UIImageView!
     
+    @IBOutlet weak var topbar: UIToolbar!
+    
+    @IBOutlet weak var bottombar: UIToolbar!
+    
     
     // open Camera to take picture
     @IBAction func useCamera(sender: AnyObject) {
@@ -88,22 +92,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
         self.dismissViewControllerAnimated(true, completion: nil)
         
-        
-            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             
-            imageView.image = image
+        imageView.image = image
             
-            if (newMedia == true)
-            {
-                UIImageWriteToSavedPhotosAlbum(image, self,
-                    "image:didFinishSavingWithError:contextInfo:", nil)
-                imageView.hidden=false
-                
-            }
+        if (newMedia == true)
+        {
+            UIImageWriteToSavedPhotosAlbum(image, self,"image:didFinishSavingWithError:contextInfo:", nil)
+            imageView.hidden=false
+        }
         
     }
     
-
+    // error message if image impossible to save
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
         
         if error != nil {
@@ -181,6 +182,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return false
     }
     
+    // manage keyboard overlapping to enter text in textfield
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:"    , name: UIKeyboardWillShowNotification, object: nil)
         
@@ -207,6 +209,40 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
+    
+    // Store a Meme
+    func saveMeme(){
+        
+        //TODO disable save if no meme
+        
+        var meme = MemeObject(haut: top_text.text!, bas: bottom_text.text!, image: imageView.image!, memedImage: generatedMemedImage())
+        
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+            
+        appDelegate.memes.append(meme)
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    // Generate a Meme
+    func generatedMemedImage() -> UIImage {
+        // hide the toolbars
+        topbar.hidden = true
+        bottombar.hidden = true
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //after the meme is generated show toolbars
+        topbar.hidden = false
+        bottombar.hidden = false
+        
+        return memedImage
+    }
+    
     
     
 
