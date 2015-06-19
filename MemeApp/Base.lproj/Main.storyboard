@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -72,12 +73,11 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardAppearance="alert" returnKeyType="done"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                    <rect key="frame" x="0.0" y="707" width="400" height="30"/>
                                 </variation>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Shd-dZ-GCx" userLabel="Toolbar du bas">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shd-dZ-GCx" userLabel="Toolbar du bas">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="p4t-sr-uYy">
@@ -85,20 +85,15 @@
                                             <action selector="useCamera:" destination="vXZ-lx-hvc" id="65T-YI-vjH"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Album" width="160" id="mna-bS-SmR">
+                                    <barButtonItem title="Album" width="347" id="mna-bS-SmR">
                                         <connections>
                                             <action selector="useCameraRoll:" destination="vXZ-lx-hvc" id="PjL-Fc-Iqp"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-Yb-2rZ" userLabel="Toolbar du haut">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Share" width="87" id="XtN-Xy-csL"/>
-                                </items>
-                            </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMP-8X-uPo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMP-8X-uPo">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -123,6 +118,14 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-Yb-2rZ" userLabel="Toolbar du haut">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="XtN-Xy-csL"/>
+                                    <barButtonItem title="My memes" width="354" id="BwS-vv-3Mk"/>
+                                </items>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -164,34 +167,34 @@
                                 <exclude reference="nH3-Iv-FhX"/>
                                 <exclude reference="cvg-GB-Xne"/>
                                 <exclude reference="Shd-dZ-GCx"/>
-                                <exclude reference="x8Q-Yb-2rZ"/>
                                 <exclude reference="LMP-8X-uPo"/>
                                 <exclude reference="uZM-eO-U4b"/>
+                                <exclude reference="x8Q-Yb-2rZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Mq9-FA-xsC"/>
-                                <exclude reference="NGs-IG-H4N"/>
-                                <exclude reference="aTZ-92-hzn"/>
-                                <exclude reference="hQS-8T-bfw"/>
-                                <exclude reference="isr-eG-pyP"/>
-                                <exclude reference="znj-Xk-15y"/>
+                                <exclude reference="Ev3-ef-UcI"/>
+                                <exclude reference="Jdw-u8-boF"/>
                                 <exclude reference="31d-aJ-Cxc"/>
                                 <exclude reference="4Wu-u9-Ilu"/>
                                 <exclude reference="4gR-Z7-giY"/>
                                 <exclude reference="Isf-xG-Njk"/>
                                 <exclude reference="dcx-TD-lfx"/>
-                                <exclude reference="W2S-Wb-A1F"/>
-                                <exclude reference="bre-51-4AZ"/>
-                                <exclude reference="vdv-EC-9n7"/>
-                                <exclude reference="xgi-kc-z9y"/>
-                                <exclude reference="Ev3-ef-UcI"/>
-                                <exclude reference="Jdw-u8-boF"/>
                                 <exclude reference="Fwj-Jc-FzF"/>
                                 <exclude reference="R1O-44-rNN"/>
                                 <exclude reference="S2r-hX-1NG"/>
                                 <exclude reference="V1I-uJ-295"/>
                                 <exclude reference="aW0-3N-qLO"/>
                                 <exclude reference="v4h-EN-xMF"/>
+                                <exclude reference="Mq9-FA-xsC"/>
+                                <exclude reference="NGs-IG-H4N"/>
+                                <exclude reference="aTZ-92-hzn"/>
+                                <exclude reference="hQS-8T-bfw"/>
+                                <exclude reference="isr-eG-pyP"/>
+                                <exclude reference="znj-Xk-15y"/>
+                                <exclude reference="W2S-Wb-A1F"/>
+                                <exclude reference="bre-51-4AZ"/>
+                                <exclude reference="vdv-EC-9n7"/>
+                                <exclude reference="xgi-kc-z9y"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -209,29 +212,29 @@
                                 <include reference="uZM-eO-U4b"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Mq9-FA-xsC"/>
-                                <include reference="NGs-IG-H4N"/>
-                                <include reference="aTZ-92-hzn"/>
-                                <include reference="hQS-8T-bfw"/>
-                                <include reference="isr-eG-pyP"/>
-                                <include reference="znj-Xk-15y"/>
+                                <include reference="Ev3-ef-UcI"/>
+                                <include reference="Jdw-u8-boF"/>
                                 <include reference="31d-aJ-Cxc"/>
                                 <include reference="4Wu-u9-Ilu"/>
                                 <include reference="4gR-Z7-giY"/>
                                 <include reference="Isf-xG-Njk"/>
                                 <include reference="dcx-TD-lfx"/>
-                                <include reference="W2S-Wb-A1F"/>
-                                <include reference="bre-51-4AZ"/>
-                                <include reference="vdv-EC-9n7"/>
-                                <include reference="xgi-kc-z9y"/>
-                                <include reference="Ev3-ef-UcI"/>
-                                <include reference="Jdw-u8-boF"/>
                                 <include reference="Fwj-Jc-FzF"/>
                                 <include reference="R1O-44-rNN"/>
                                 <include reference="S2r-hX-1NG"/>
                                 <include reference="V1I-uJ-295"/>
                                 <include reference="aW0-3N-qLO"/>
                                 <include reference="v4h-EN-xMF"/>
+                                <include reference="Mq9-FA-xsC"/>
+                                <include reference="NGs-IG-H4N"/>
+                                <include reference="aTZ-92-hzn"/>
+                                <include reference="hQS-8T-bfw"/>
+                                <include reference="isr-eG-pyP"/>
+                                <include reference="znj-Xk-15y"/>
+                                <include reference="W2S-Wb-A1F"/>
+                                <include reference="bre-51-4AZ"/>
+                                <include reference="vdv-EC-9n7"/>
+                                <include reference="xgi-kc-z9y"/>
                             </mask>
                         </variation>
                     </view>

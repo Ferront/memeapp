@@ -171,10 +171,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // text attibutes, negative stroke to be able to fill letters
         let memeTextAttributes =
         [
-            NSForegroundColorAttributeName : UIColor.yellowColor(),
-            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : -2.0,
-            NSStrokeColorAttributeName : UIColor.blueColor()
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 50)!,
+            NSStrokeWidthAttributeName : -4.0,
+            NSStrokeColorAttributeName : UIColor.blackColor()
             // ajouter alignement text
             
         ]
