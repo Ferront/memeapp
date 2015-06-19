@@ -122,7 +122,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-Yb-2rZ" userLabel="Toolbar du haut">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="XtN-Xy-csL"/>
+                                    <barButtonItem systemItem="action" id="XtN-Xy-csL">
+                                        <connections>
+                                            <action selector="shareit:" destination="vXZ-lx-hvc" id="1qg-17-OtA"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="My memes" width="354" id="BwS-vv-3Mk"/>
                                 </items>
                                 <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

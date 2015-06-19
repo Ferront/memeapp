@@ -244,6 +244,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     
+    @IBAction func shareit(sender: AnyObject) {
+        
+        var instantImage = generatedMemedImage()
+        let activityViewController = UIActivityViewController(activityItems: [instantImage], applicationActivities: nil)
+        
+        activityViewController.completionWithItemsHandler = {
+            activity, completed, items, error in
+            if completed {
+                self.saveMeme()
+                
+            }
+        }
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+
+        
+    }
     
 
 }
