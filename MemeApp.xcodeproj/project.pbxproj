@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB9ABF8D1B3409A700EBA041 /* MemeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9ABF8C1B3409A700EBA041 /* MemeObject.swift */; };
 		EBC0CFF41B2F6A0E00921A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0CFF31B2F6A0E00921A3C /* AppDelegate.swift */; };
 		EBC0CFF61B2F6A0F00921A3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0CFF51B2F6A0F00921A3C /* ViewController.swift */; };
 		EBC0CFF91B2F6A1000921A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC0CFF71B2F6A1000921A3C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB9ABF8C1B3409A700EBA041 /* MemeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeObject.swift; sourceTree = "<group>"; };
 		EBC0CFEE1B2F6A0C00921A3C /* MemeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC0CFF21B2F6A0E00921A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC0CFF31B2F6A0E00921A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				EBC0CFF31B2F6A0E00921A3C /* AppDelegate.swift */,
 				EBC0CFF51B2F6A0F00921A3C /* ViewController.swift */,
 				EBC0CFF71B2F6A1000921A3C /* Main.storyboard */,
+				EB9ABF8C1B3409A700EBA041 /* MemeObject.swift */,
 				EBC0CFFA1B2F6A1100921A3C /* Images.xcassets */,
 				EBC0CFFC1B2F6A1200921A3C /* LaunchScreen.xib */,
 				EBC0CFF11B2F6A0D00921A3C /* Supporting Files */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9ABF8D1B3409A700EBA041 /* MemeObject.swift in Sources */,
 				EBC0CFF61B2F6A0F00921A3C /* ViewController.swift in Sources */,
 				EBC0CFF41B2F6A0E00921A3C /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				EBC0D00F1B2F6A1300921A3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBC0D0101B2F6A1300921A3C /* Build configuration list for PBXNativeTarget "MemeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				EBC0D0121B2F6A1300921A3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

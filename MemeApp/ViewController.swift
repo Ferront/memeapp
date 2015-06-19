@@ -11,44 +11,19 @@ import MobileCoreServices
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
-    @IBOutlet var imageView: UIImageView!
+
 
     var imagePicker = UIImagePickerController()
     var newMedia: Bool?
 
-    @IBOutlet weak var flecheimg: UIImageView!
-    @IBOutlet weak var TextInstruction: UILabel!
-    @IBOutlet weak var top_text: UITextField!
-    @IBOutlet weak var bottom_text: UITextField!
-    //var contentMode: UIViewContentMode
-
-    //@IBOutlet weak var imagePickerView: UIImageView!
-   
-//    @IBAction func btnClicked(){
-//        
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
-//            println("Button capture")
-//            
-//            
-//            imagePicker.delegate = self
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
-//            imagePicker.allowsEditing = false
-//            
-//            self.presentViewController(imagePicker, animated: true, completion: nil)
-//        }
-//        
-//    }
-//    
+    @IBOutlet weak var flecheimg: UIImageView! //decoration image
+    @IBOutlet weak var TextInstruction: UILabel! // help guidance for user
+    @IBOutlet weak var top_text: UITextField! // text entered by user
+    @IBOutlet weak var bottom_text: UITextField! // text entered by user
+    @IBOutlet var imageView: UIImageView!
     
-//    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-//        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-//            
-//        })
-//        
-//        imageView.image = image
-//        
-//    }
     
+    // open Camera to take picture
     @IBAction func useCamera(sender: AnyObject) {
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
@@ -67,6 +42,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    // Open list of pictures
     @IBAction func useCameraRoll(sender: AnyObject) {
         
         if UIImagePickerController.isSourceTypeAvailable(
@@ -88,6 +64,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    // manage help for user first time
     func HideHelp (){
         TextInstruction.hidden=true
         flecheimg.hidden=true
@@ -96,6 +73,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imageView.hidden=false
     }
     
+    // dismiss text instruction to guide user
     func showHelp(){
         TextInstruction.hidden=false
         flecheimg.hidden=false
@@ -108,11 +86,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     {
         
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
-        
         self.dismissViewControllerAnimated(true, completion: nil)
         
-        if (mediaType.isEqualToString(kUTTypeImage as String))
-        {
+        
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             
             imageView.image = image
@@ -124,12 +100,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 imageView.hidden=false
                 
             }
-            else if mediaType.isEqualToString(kUTTypeMovie as! String)
-            {
-                // Code to support video here
-            }
-            
-        }
+        
     }
     
 
