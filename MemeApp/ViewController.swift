@@ -27,6 +27,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var bottombar: UIToolbar!
     
     
+    @IBOutlet weak var sharebutton: UIBarButtonItem!
+    
     // open Camera to take picture
     @IBAction func useCamera(sender: AnyObject) {
         
@@ -75,6 +77,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         top_text.hidden=false
         bottom_text.hidden=false
         imageView.hidden=false
+        sharebutton.enabled=true
     }
     
     // dismiss text instruction to guide user
@@ -84,6 +87,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         top_text.hidden=true
         bottom_text.hidden=true
         imageView.hidden=true
+        sharebutton.enabled=false
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])

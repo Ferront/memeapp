@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB75E0F81B37471900F9F838 /* SentMemesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB75E0F71B37471900F9F838 /* SentMemesVC.swift */; };
 		EB9ABF8D1B3409A700EBA041 /* MemeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9ABF8C1B3409A700EBA041 /* MemeObject.swift */; };
 		EBC0CFF41B2F6A0E00921A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0CFF31B2F6A0E00921A3C /* AppDelegate.swift */; };
 		EBC0CFF61B2F6A0F00921A3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0CFF51B2F6A0F00921A3C /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB75E0F71B37471900F9F838 /* SentMemesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesVC.swift; sourceTree = "<group>"; };
 		EB9ABF8C1B3409A700EBA041 /* MemeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeObject.swift; sourceTree = "<group>"; };
 		EBC0CFEE1B2F6A0C00921A3C /* MemeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC0CFF21B2F6A0E00921A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				EBC0CFF31B2F6A0E00921A3C /* AppDelegate.swift */,
 				EBC0CFF51B2F6A0F00921A3C /* ViewController.swift */,
+				EB75E0F71B37471900F9F838 /* SentMemesVC.swift */,
 				EBC0CFF71B2F6A1000921A3C /* Main.storyboard */,
 				EB9ABF8C1B3409A700EBA041 /* MemeObject.swift */,
 				EBC0CFFA1B2F6A1100921A3C /* Images.xcassets */,
@@ -217,6 +220,7 @@
 			files = (
 				EB9ABF8D1B3409A700EBA041 /* MemeObject.swift in Sources */,
 				EBC0CFF61B2F6A0F00921A3C /* ViewController.swift in Sources */,
+				EB75E0F81B37471900F9F838 /* SentMemesVC.swift in Sources */,
 				EBC0CFF41B2F6A0E00921A3C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
