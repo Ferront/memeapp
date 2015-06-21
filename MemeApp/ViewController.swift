@@ -217,8 +217,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     // Store a Meme
     func saveMeme(){
         
-        //TODO disable save if no meme
-        
+                
         var meme = MemeObject(haut: top_text.text!, bas: bottom_text.text!, image: imageView.image!, memedImage: generatedMemedImage())
         
         let object = UIApplication.sharedApplication().delegate
