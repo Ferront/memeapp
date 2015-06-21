@@ -27,11 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }else{
-            
-            //TODO
-            //var initialViewController = storyboard.instantiateViewControllerWithIdentifier("SentMemesVC") as! SentMemesTableViewController
-            
-            //self.window?.rootViewController = initialViewController
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("SentMemesVC") as! SentMemesVC
+            self.window?.rootViewController = initialViewController
         }
         
         return true
