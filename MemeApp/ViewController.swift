@@ -9,6 +9,8 @@
 import UIKit
 import MobileCoreServices
 
+
+
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
 
@@ -21,13 +23,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var top_text: UITextField! // text entered by user
     @IBOutlet weak var bottom_text: UITextField! // text entered by user
     @IBOutlet var imageView: UIImageView!
-    
     @IBOutlet weak var topbar: UIToolbar!
-    
     @IBOutlet weak var bottombar: UIToolbar!
-    
-    
     @IBOutlet weak var sharebutton: UIBarButtonItem!
+    @IBOutlet weak var camera: UIBarButtonItem!
     
     // open Camera to take picture
     @IBAction func useCamera(sender: AnyObject) {
@@ -88,6 +87,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         bottom_text.hidden=true
         imageView.hidden=true
         sharebutton.enabled=false
+
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
@@ -139,7 +139,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //check camera is available
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        {
+            camera.enabled=true
+        } else {
+            camera.enabled=false
+        }
         
         showHelp()
         
