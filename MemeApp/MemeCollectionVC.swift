@@ -22,7 +22,6 @@ class MemeCollectionVC: UICollectionViewController, UICollectionViewDataSource, 
         presentViewController(vc, animated:true, completion:nil)
     }
     
-
     var memes: [MemeObject]!
     
     override func viewWillAppear(animated: Bool) {
@@ -30,8 +29,7 @@ class MemeCollectionVC: UICollectionViewController, UICollectionViewDataSource, 
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-        collectionView?.reloadData()
-        
+        collectionView?.reloadData()        
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -66,7 +64,7 @@ class MemeCollectionVC: UICollectionViewController, UICollectionViewDataSource, 
         let detailController = storyboard!.instantiateViewControllerWithIdentifier("memeDetailVC") as! memeDetailVC
         detailController.meme = memes[indexPath.item]
         
-        self.navigationController!.pushViewController(detailController, animated: true)
+        navigationController!.pushViewController(detailController, animated: true)
     }
     
     

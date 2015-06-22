@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-
 class SentMemesVC: UITableViewController, UITableViewDataSource {
-    
     
     @IBAction func createNewMemes(sender: AnyObject) {
         
@@ -47,7 +45,7 @@ class SentMemesVC: UITableViewController, UITableViewDataSource {
         memes = appDelegate.memes
         
         //add edit button to tableview
-        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
