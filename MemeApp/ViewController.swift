@@ -128,7 +128,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     
@@ -178,18 +178,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
+        //self.view.endEditing(true)
+        //return false
+        
+        top_text.resignFirstResponder()
+        bottom_text.resignFirstResponder()
+        
+        return true
+
     }
     
     // manage keyboard overlapping to enter text in textfield
@@ -206,11 +212,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottom_text.isFirstResponder()
+        {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
+        view.frame.origin.y = 0
     }
     
     
@@ -222,8 +231,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Store a Meme
     func saveMeme(){
-        
-                
         var meme = MemeObject(haut: top_text.text!, bas: bottom_text.text!, image: imageView.image!, memedImage: generatedMemedImage())
         
         let object = UIApplication.sharedApplication().delegate
