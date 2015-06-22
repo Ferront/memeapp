@@ -188,14 +188,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        //self.view.endEditing(true)
-        //return false
-        
         top_text.resignFirstResponder()
         bottom_text.resignFirstResponder()
         
         return true
-
     }
     
     // manage keyboard overlapping to enter text in textfield
